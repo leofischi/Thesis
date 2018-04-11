@@ -1,0 +1,226 @@
+\documentclass[]{politex}
+% ========== Opções ==========
+% pnumromarab - Numeração de páginas usando algarismos romanos na parte pré-textual e arábicos na parte textual
+% abnttoc - Forçar paginação no sumário conforme ABNT (inclui "p." na frente das páginas)
+% normalnum - Numeração contínua de figuras e tabelas 
+%	(caso contrário, a numeração é reiniciada a cada capítulo)
+% draftprint - Ajusta as margens para impressão de rascunhos
+%	(reduz a margem interna)
+% twosideprint - Ajusta as margens para impressão frente e verso
+% capsec - Forçar letras maiúsculas no título das seções
+% espacosimples - Documento usando espaçamento simples
+% espacoduplo - Documento usando espaçamento duplo
+%	(o padrão é usar espaçamento 1.5)
+% times - Tenta usar a fonte Times New Roman para o corpo do texto
+% noindentfirst - Não indenta o primeiro parágrafo dos capítulos/seções
+
+
+% ========== Packages ==========
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{graphicx,cite,enumerate}
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+
+% ========== Language options ==========
+%\usepackage[brazil]{babel}
+\usepackage[english]{babel}
+
+
+% ========== ABNT (requer ABNTeX 2) ==========
+%	http://www.ctan.org/tex-archive/macros/latex/contrib/abntex2
+%\usepackage[num]{abntex2cite}
+
+% Forçar o abntex2 a usar [ ] nas referências ao invés de ( )
+%\citebrackets{[}{]}
+
+
+% ========== Lorem ipsum ==========
+\usepackage{blindtext}
+
+
+
+% ========== Opções do documento ==========
+% Título
+\titulo{EMG-driven Exoskeleton Control}
+
+% Autor
+\autor{Leonardo Fischi Sommer}
+
+% Para múltiplos autores (TCC)
+%\autor{Nome Sobrenome\\%
+%		Nome Sobrenome\\%
+%		Nome Sobrenome}
+
+% Orientador / Coorientador
+\orientador{Prof. Dr. Arturo Forner Cordero}
+%\coorientador{Nome do coorientador (opcional)}
+
+% Tipo de documento
+%\tcc{Eletricista com ênfase em Sistemas Eletrônicos}
+\dissertacao{Mechanical Engineering}
+%\teseDOC{Engenharia Elétrica}
+%\teseLD
+%\memorialLD
+
+% Departamento e área de concentração
+\departamento{Mechanical Engineering}
+\areaConcentracao{Control and Mechanical Automation Engineering}
+
+% Local
+\local{São Paulo}
+
+% Ano
+\data{2017}
+
+
+
+
+\begin{document}
+% ========== Capa e folhas de rosto ==========
+\capa
+\falsafolhaderosto
+\folhaderosto
+
+
+% ========== Folha de assinaturas (opcional) ==========
+%\begin{folhadeaprovacao}
+%	\assinatura{Prof.\ X}
+%	\assinatura{Prof.\ Y}
+%	\assinatura{Prof.\ Z}
+%\end{folhadeaprovacao}
+
+
+% ========== Ficha catalográfica ==========
+% Fazer solicitação no site:
+%	http://www.poli.usp.br/en/bibliotecas/servicos/catalogacao-na-publicacao.html
+
+
+% ========== Dedicatória (opcional) ==========
+\dedicatoria{Dedicatória}
+
+
+% ========== Agradecimentos ==========
+\begin{agradecimentos}
+
+Thanks...
+
+
+
+\end{agradecimentos}
+
+
+% ========== Epígrafe (opcional) ==========
+\epigrafe{%
+	\emph{``Epígrafe''}
+	\begin{flushright}
+		-{}- Autor
+	\end{flushright}
+}
+
+
+% ========== Resumo ==========
+\begin{resumo}
+Desenvolvimento de um método de controle para um exoesqueleto com um grau de liberdade, usando sinais de eletromiografia de superfície do usuário como sinal de entrada. A dinâmica tanto do exoesqueleto quanto do humano são estudadas para um melhor desenvolvimento do método de controle. Um exoesqueleto disponível é adaptado para servir de plataforma para os métodos de controle desenvolvidos. Três diferentes métodos de controle são avaliados e comparados nos quesitos de precisão e facilidade de uso. Os três métodos de controle desenvolvidos são: controle baseado em modelo matemático, controle proporcional e controle híbrido utilizando eletromiografia e sensores de força. Para o controle do motor do exoesqueleto também são desenvolvidos e comparados o controle de impedâncias e controle por modo de deslizamento.
+%
+\\[3\baselineskip]
+%
+\textbf{Palavras-Chave} -- Exoesqueleto, EMG, Controle proporcional, Identificação de sistemas.
+\end{resumo}
+
+
+% ========== Abstract ==========
+\begin{abstract}
+Development of a control system for an exoskeleton with one degree of freedom, using surface electromyography signals from the user as the input signal. Both the exoskeleton and the human dynamics are studied to better develop this control method. An available exoskeleton is adapted to serve as platform for the developed control methods. Three different control methods are evaluated and compared based on their precision and ease of use. The three developed control methods are: control based in mathematical model, proportional control and hybrid control using electromyography and force sensors. To control the exoskeleton motor two control methods were developed and compared: Impedance control and Sliding mode control.
+%
+\\[3\baselineskip]
+%
+\textbf{Keywords} -- Exoskeleton, EMG, Proportional control, System identification.
+\end{abstract}
+
+
+% ========== Listas (opcional) ==========
+\listadefiguras
+\listadetabelas
+
+% ========== Sumário ==========
+\sumario
+
+
+
+% ========== Elementos textuais ==========
+
+%\part{Introdução}
+	
+%\chapter{Capítulo com epígrafe}
+%\capepigrafe[0.5\textwidth]{``Frase espirituosa de um autor famoso''}{Autor famoso}
+
+%\blindtext
+
+%\begin{citacaoLonga}
+%	\blindtext
+%\end{citacaoLonga}
+
+%\blindtext
+
+
+
+%\blinddocument
+
+\part{Introduction}
+
+\include{Introduction}
+
+\mypart{Exoskeleton Platforms}{In this part, it is described the work developed on the mechanical design of the exoskeleton platforms that will be used to implement the control strategies developed}
+
+\include{ETMICAE}
+
+\include{ULExo}
+
+\include{ModExo}
+
+\mypart{Control Design and Testing}{In this part, control methods for the EMG and mechanical control are proposed, designed, implemented and evaluated to determine which one is better suited for controlling an exoskeleton.}
+
+\include{Impedance_and_SM_Control}
+
+\include{Control_Methods}
+
+\include{ModelControl}
+
+\include{ProportionalControl}
+
+\include{HybridControl}
+
+\include{Paper}
+
+\include{Results}
+
+
+% ========== Referências ==========
+% --- IEEE ---
+%	http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran
+%\bibliographystyle{IEEEbib}
+\bibliographystyle{ieeetr}
+
+% --- ABNT (requer ABNTeX 2) ---
+%	http://www.ctan.org/tex-archive/macros/latex/contrib/abntex2
+%\bibliographystyle{abntex2-num}
+
+\bibliography{Bibliography}
+
+
+% ========== Apêndices (opcional) ==========
+%\apendice
+%\chapter{}
+%\chapter{Beta}
+
+
+% ========== Anexos (opcional) ==========
+%\anexo
+%\chapter{Alpha}
+%\chapter{}
+
+
+
+\end{document}
